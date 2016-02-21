@@ -24,14 +24,10 @@ echo 'Hello world from Cloud9!';
                            $par += $j;
                            
                             if ( $j % 2 === 0 ) {
-                                echo "<td>";
-                                echo $par;
-                                echo "</td>";
+                                echo "<td> $par </td>";
                             }
                             if ( $j % 2 != 0 ) {
-                                echo "<td> $par";
-                                echo $par;
-                                echo "</td>";
+                                echo "<td> $par </td>";
                             }
                             
                         }
