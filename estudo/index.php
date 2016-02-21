@@ -29,7 +29,7 @@ echo 'Hello world from Cloud9!';
                                 echo "</td>";
                             }
                             if ( $j % 2 != 0 ) {
-                                echo "<td>";
+                                echo "<td> $par";
                                 echo $par;
                                 echo "</td>";
                             }
