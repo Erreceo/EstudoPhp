@@ -51,12 +51,15 @@ echo 'Hello world from Cloud9!';
 				</thead>
 				<tbody>
 				<?php
-				$rsitem = $GLOBALS['conn']->Execute("SELECT i.ds_item, i.nr_item
+			/*	$rsitem = $GLOBALS['conn']->Execute("SELECT i.ds_item, i.nr_item
     									  FROM HS_RESULTADO r
     								INNER JOIN HS_RESULT_ITEM i ON (i.id_hs_resultado = r.id)
     									 WHERE r.id = ?
     								  ORDER BY i.nr_item DESC, i.ds_item	
-    								", array($id) );
+    								", array($id) );*/
+    								
+    			$rsitem = $GLOBALS['conn']->Execute("SELECT customerNumber, customerName
+    									  FROM customers" );						
 				
 				$ordem = 0;
 				while (!$rsitem->EOF):
@@ -64,13 +67,12 @@ echo 'Hello world from Cloud9!';
 					?>
 					<tr>
 					<td><?php echo $ordem;?>&ordm;</td>
-					<td><?php echo $rsitem->fields['ds_item'];?></td>
-					<td><?php echo $rsitem->fields['nr_item'];?></td>
+					<td><?php echo $rsitem->fields['customerNumber'];?></td>
+					<td><?php echo $rsitem->fields['customerName'];?></td>
 					</tr>
 					<?php
 					$rsitem->MoveNext();
 				endwhile;
-				$result->MoveNext();
 				?>
 				</tbody>
 			</table>
