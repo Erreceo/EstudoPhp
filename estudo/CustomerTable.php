@@ -173,9 +173,9 @@ fConnDB();
                             <?php echo $row['customerName'];?>
                           </td>
                           <td>
-                              <?php echo $row['phone'];
-                              //echo PREG_REPLACE( '/\D+/i' , '' , $row['phone'] ) ;
-                              ?>
+                              <?php echo $row['phone'];?>
+                              <!-- echo PREG_REPLACE( '/\D+/i' , '' , $row['phone'] ) ; -->
+                              
                           </td>
                           <td>
                             <?php echo $row['addressLine1'];?>
