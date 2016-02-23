@@ -173,7 +173,9 @@ fConnDB();
                             <?php echo $row['customerName'];?>
                           </td>
                           <td>
-                              <?php echo $row['phone'];?>
+                              <?php echo $row['phone'];
+                              //echo PREG_REPLACE( '/\D+/i' , '' , $row['phone'] ) ;
+                              ?>
                           </td>
                           <td>
                             <?php echo $row['addressLine1'];?>
@@ -192,6 +194,8 @@ fConnDB();
                           </td>
                        </tr>
                        <?php
+                          //$GLOBALS['conn']->Execute("update customers set phone = ? where customerNumber = ?", array(PREG_REPLACE( '/\D+/i' , '' , $row['phone'] ), $row['customerNumber']) );
+                       
     									  }
                        ?>
                       
